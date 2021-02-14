@@ -1,0 +1,12 @@
+# - file: README
+- file: docs/index
+
+- part: Course Overview
+  chapters:
+    - file: docs/course_schedule
+    - file: docs/eval_grades
+    - file: docs/dartmouth_policies
+- part: General Python Resources 
+  chapters:
+    - file: docs/python_by_example
+    - file: docs/learn_more
