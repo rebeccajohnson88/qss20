@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dartmouth Policies" href="dartmouth_policies.html" />
+    <link rel="prev" title="Course schedule" href="course_schedule.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -91,14 +93,14 @@
   Course Overview
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="course_schedule.html">
    Course schedule
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="eval_grades_py.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Evaluation and grading
   </a>
  </li>
@@ -145,14 +147,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/docs/eval_grades.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/eval_grades.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/eval_grades_py.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -175,7 +174,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/quantecon-mini-example/master?urlpath=tree/mini_book/docs/eval_grades.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/quantecon-mini-example/master?urlpath=tree/mini_book/docs/eval_grades_py.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -246,40 +245,78 @@
               <div>
                 
   <div class="section" id="evaluation-and-grading">
-<span id="evaluation-grading"></span><h1>Evaluation and grading<a class="headerlink" href="#evaluation-and-grading" title="Permalink to this headline">¶</a></h1>
+<h1>Evaluation and grading<a class="headerlink" href="#evaluation-and-grading" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="summary-and-grading-policy">
 <h2>Summary and grading policy<a class="headerlink" href="#summary-and-grading-policy" title="Permalink to this headline">¶</a></h2>
-<p>You will have four cumulative late days for assignments, that can be apportioned as you see fit between problem set one and problem set two (this ensures you have submitted the problem set by our in-class review). They cannot be used for the final project or final presentation. If you run over and have not submitted the pset by the following Monday, I ask that you not attend class as not to see the answers. There will be a deduction of 10 percentage points for each late day after you have used your allowed late days.</p>
+<p>You will have four cumulative late days for assignments, that can be apportioned as you see fit between the problem set one and problem set two (this ensures you have submitted the problem set by our in-class review). Since problem set one is a group problem set, you need to decide if and how many late days to use as a group.  Late days cannot be used for the final project or final presentation. If you run over and have not submitted the pset by the following Monday, I ask that you not attend class as not to see the answers. There will be a deduction of 10 percentage points for each late day after you have used your allowed late days.</p>
 <p>Grades may be curved if there are no students receiving A’s on the non-curved grading scale.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## import modules</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
-<span class="n">grade_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">Frame</span><span class="p">({</span><span class="n">Assignments</span><span class="p">:</span>
+<span class="n">grade_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Assignments&#39;</span><span class="p">:</span>
                 <span class="p">[</span><span class="s2">&quot;Datacamp modules&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Two problem sets&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Final project&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Replication of another group&#39;s project&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Team player/participation&quot;</span><span class="p">],</span>
-                <span class="n">Percentage</span><span class="p">:</span>
+                <span class="s1">&#39;Percentage&#39;</span><span class="p">:</span>
                 <span class="p">[</span><span class="mi">5</span><span class="p">,</span> 
                   <span class="mi">30</span><span class="p">,</span>
                   <span class="mi">45</span><span class="p">,</span>
                   <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-                <span class="n">Deadlines</span><span class="p">:</span>
+                <span class="s1">&#39;Deadlines&#39;</span><span class="p">:</span>
                 <span class="p">[</span><span class="s2">&quot;Throughout&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Pset one: Thurs. 04-15; </span><span class="se">\</span>
 <span class="s2">                  Pset two: Thurs. 05-13&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Presentation: Tuesday 06-01; Short paper: Friday 05-28&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Sunday 06-06&quot;</span><span class="p">,</span>
                   <span class="s2">&quot;Throughout&quot;</span><span class="p">]})</span> 
-                  
+
 <span class="n">HTML</span><span class="p">(</span><span class="n">grade_summary</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-        
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Assignments</th>
+      <th>Percentage</th>
+      <th>Deadlines</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Datacamp modules</td>
+      <td>5</td>
+      <td>Throughout</td>
+    </tr>
+    <tr>
+      <td>Two problem sets</td>
+      <td>30</td>
+      <td>Pset one: Thurs. 04-15;                   Pset two: Thurs. 05-13</td>
+    </tr>
+    <tr>
+      <td>Final project</td>
+      <td>45</td>
+      <td>Presentation: Tuesday 06-01; Short paper: Friday 05-28</td>
+    </tr>
+    <tr>
+      <td>Replication of another group's project</td>
+      <td>15</td>
+      <td>Sunday 06-06</td>
+    </tr>
+    <tr>
+      <td>Team player/participation</td>
+      <td>5</td>
+      <td>Throughout</td>
+    </tr>
+  </tbody>
+</table></div></div>
 </div>
 </div>
 <div class="section" id="details">
@@ -308,7 +345,7 @@
 <div class="section" id="final-project-45-of-grade">
 <h3>Final project (45% of grade)<a class="headerlink" href="#final-project-45-of-grade" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>I will randomly assign groups of 3-4 a few meetings in to the quarter.\footnote{I’ve found that this is more effective than letting you choose your own groups for teaching you how to collaborate on technical projects with people who you may not always see eye to eye with!}</p></li>
+<li><p>I will randomly assign groups of 3-4 a few meetings in to the quarter. I’ve found that this is more effective than letting you choose your own groups for teaching you how to collaborate on technical projects with people who you may not always see eye to eye with!</p></li>
 <li><p>By <strong>Thursday 04-22</strong>: you will submit a 1-page project proposal outlining (broadly) what question you are interested in investigating with the data provided</p></li>
 <li><p>Each group will work on a project that integrates the concepts we are covering into an applied data science project. The end product will be a github repository that contains:</p>
 <ul>
@@ -378,6 +415,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="course_schedule.html" title="previous page">Course schedule</a>
+    <a class='right-next' id="next-link" href="dartmouth_policies.html" title="next page">Dartmouth Policies</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
