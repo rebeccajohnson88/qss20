@@ -4,9 +4,6 @@
 - part: Course Overview
   chapters:
     - file: docs/course_schedule
-    - file: docs/eval_grades
+    - file: docs/eval_grades_py
     - file: docs/dartmouth_policies
-- part: General Python Resources 
-  chapters:
-    - file: docs/python_by_example
-    - file: docs/learn_more
+
