@@ -37,13 +37,16 @@ We will be using the Zoom linked to Canvas for the synchronous sessions and grou
 (1) Consent to recording of course meetings and office hours that are open to multiple students.
 
 By enrolling in this course,
+
 a) I affirm my understanding that the instructor may record meetings of this course and any associated meetings
 open to multiple students and the instructor, including but not limited to scheduled and ad hoc office hours and other
 consultations, within any digital platform, including those used to offer remote instruction for this course.
+
 b) I further affirm that the instructor owns the copyright to their instructional materials, of which these recordings
 constitute a part, and my distribution of any of these recordings in whole or in part to any person or entity other than
 other members of the class without prior written consent of the instructor may be subject to discipline by Dartmouth
 up to and including separation from Dartmouth.
+
 (2) Requirement of consent to one-on-one recordings
 By enrolling in this course, I hereby affirm that I will not make a recording in any medium of any one-on-one
 meeting with the instructor or another member of the class or group of members of the class without obtaining the
