@@ -35,7 +35,7 @@ provided a dedicated server hosted on Amazon Web Services that will allow us to 
 
 Here are the instructions:
 
-**Step one**: Navigate to: jhub.dartmouth.edu while logged in with your Dartmouth netid. If you're off campus, you may need to connect to Dartmouth VPN ([instructions here and email Dartmouth IT about issues](https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=66806)). You should see an option for a course. Click on it and the server will start up (takes 20-30 seconds)
+**Step one**: Navigate to: [jhub.dartmouth.edu](https://jhub.dartmouth.edu/) while logged in with your Dartmouth netid. If you're off campus, you may need to connect to Dartmouth VPN ([instructions here and email Dartmouth IT about issues](https://services.dartmouth.edu/TDClient/1806/Portal/KB/ArticleDet?ID=66806)). You should see an option for a course. Click on it and the server will start up (takes 20-30 seconds)
 
 ```{image} ../images/jhub1.png
 :alt: jhub 1
