@@ -20,7 +20,7 @@ We will be using the following tools in the course:
     - `#pythonhelp_general`: this channel can be used for general python questions, and we'll also have problem set specific channels.
     - `#datacamp_questions`: these are questions about DataCamp, esp. about making sure your account is set up.
     
-- **Remote computing environment (for shorthand: jhub)[Details](##Jhub)**: [Arnold Song in Dartmouth’s Research Computing](https://itc.dartmouth.edu/people/arnold-song) has generously set up a dedicated course server on Dartmouth's jupyter hub. This allows you to open up any browser (chrome; firefox) etc. and complete Python tutorials without needing to download data or files locally / deal with package installation issues. More details on the server are below.
+- **Remote computing environment (for shorthand: jhub)**: [Arnold Song in Dartmouth’s Research Computing](https://itc.dartmouth.edu/people/arnold-song) has generously set up a dedicated course server on Dartmouth's jupyter hub. This allows you to open up any browser (chrome; firefox) etc. and complete Python tutorials without needing to download data or files locally / deal with package installation issues. More details on the server are below.
 
 - **Locally-installed python (for shorthand: local python)**: eventually, you'll leave the course and Dartmouth and need to know how to use Python locally. So in addition to jhub, I'm asking you to install the necessary software to run things locally: Python 3.7+ via the Anaconda distribution system
 
@@ -53,7 +53,7 @@ Here are the instructions:
 :align: center
 ```
 
-**Step three**: To open up a notebook from scratch, click `new` on the top right and start a new python3 notebook/kernel. Make sure to give it a name:
+**Step three**: To open up a notebook from scratch, click `new` on the top right and start a new python3 notebook/kernel by clicking `Python 3`. Make sure to give it a name:
 
 ```{image} ../images/jhub3.png
 :alt: jhub 3
