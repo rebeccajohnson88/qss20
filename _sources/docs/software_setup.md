@@ -29,8 +29,6 @@ We will be using the following tools in the course:
 - **Git/GitHub**: one of the course goals is to get you more familiar with using Git/GitHub for version control. You can interact with GitHub both from the jhub remote environment and from your local machine. Instructions below for each and we'll have an in-class activity where you create your own repo and add me as a collaborator. 
 
 
-provided a dedicated server hosted on Amazon Web Services that will allow us to store data, access specialized software, and run analyses. This means that everyone should be able to run all of the tutorials on their laptops, tablets, etc by accessing notebooks on the jupyterhub server and will not need to install anything beyond a working browser. 
-
 ## Jhub
 
 Here are the instructions:
