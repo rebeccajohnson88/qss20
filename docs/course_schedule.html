@@ -363,7 +363,7 @@ Name: date_toprint, dtype: object
                                             <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                        <span class="s1">&#39;&lt;a href=&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&lt;div&gt;&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;&lt;a target=&quot;_blank&quot; href=&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&lt;div&gt;&#39;</span> <span class="o">+</span> <span class="s2">&quot;Link&quot;</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span><span class="p">,</span>
                         <span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -392,7 +392,7 @@ Name: date_toprint, dtype: object
       <td>Course intro. and checking software setup</td>
       <td></td>
       <td></td>
-      <td><a href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf><div>https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf</div></a></td>
+      <td><a target="_blank" href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf><div>Link</div></a></td>
     </tr>
     <tr>
       <td>Thursday 04-01</td>
