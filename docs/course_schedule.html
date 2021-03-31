@@ -356,13 +356,22 @@ Name: date_toprint, dtype: object
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Due (11:59 PM EST unless otherwise specified)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">due_dates</span><span class="p">,</span>
                      <span class="n">assig</span><span class="p">,</span>
                      <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1">## add slides or tutorial link</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Course intro. and checking software setup&quot;</span><span class="p">],</span>
+                                            <span class="p">[</span><span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf&quot;</span><span class="p">],</span>
+                                            <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;&lt;a href=&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&lt;div&gt;&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span><span class="p">,</span>
+                        <span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">escape</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -374,6 +383,7 @@ Name: date_toprint, dtype: object
       <th>Concepts</th>
       <th>DataCamp module(s) (if any)</th>
       <th>Due (11:59 PM EST unless otherwise specified)</th>
+      <th>Link to slides or tutorial</th>
     </tr>
   </thead>
   <tbody>
@@ -382,10 +392,12 @@ Name: date_toprint, dtype: object
       <td>Course intro. and checking software setup</td>
       <td></td>
       <td></td>
+      <td><a href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf><div>https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf</div></a></td>
     </tr>
     <tr>
       <td>Thursday 04-01</td>
       <td>Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -394,11 +406,13 @@ Name: date_toprint, dtype: object
       <td>Python basic data wrangling: data structures (vectors; lists; dataframes; matrices), control flow, and loops</td>
       <td>Python basics; python lists; Pandas: extracting and transforming data; Intermediate python for data science (loops)</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-08</td>
       <td>Python basic data wrangling: basic regular expressions and text mining</td>
       <td>First three modules of regular expressions in Python</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -406,16 +420,19 @@ Name: date_toprint, dtype: object
       <td>Python basic data wrangling: combining data (row binds, column binds, joins); aggregation</td>
       <td>Merging DataFrames with Pandas</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-15</td>
       <td>Review of visualization: ggplot; plotnine</td>
       <td>Introduction to Data Visualization with ggplot2</td>
       <td>Problem set one</td>
+      <td></td>
     </tr>
     <tr>
       <td>Tuesday 04-20</td>
       <td>Problem set one review</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -424,16 +441,19 @@ Name: date_toprint, dtype: object
       <td>Python: writing your own functions and simulation</td>
       <td></td>
       <td>1-page project proposal</td>
+      <td></td>
     </tr>
     <tr>
       <td>Tuesday 04-27</td>
       <td>Python: text data using nltk and gensim</td>
       <td>Natural language processing fundamentals in Python</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-29</td>
       <td>Python: spatial data using geopandas</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -442,11 +462,13 @@ Name: date_toprint, dtype: object
       <td>SQL: reading data from a database and basic SQL (postgres) syntax</td>
       <td>Introduction to databases in Python</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 05-06</td>
       <td>SQL: more advanced SQL syntax (subqueries; window functions)</td>
       <td>Intermediate SQL</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -454,16 +476,19 @@ Name: date_toprint, dtype: object
       <td>Python: reading data from APIs and basic web scraping</td>
       <td>Importing JSON data and working with APIs; Importing data from the Internet</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 05-13</td>
       <td>Python: interacting with cloud computing resources (Amazon S3; Dartmouth's Andes or Polaris servers)</td>
       <td></td>
       <td>Problem set two</td>
+      <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-18</td>
       <td>Problem set two review</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -472,10 +497,12 @@ Name: date_toprint, dtype: object
       <td>Interactive visualization: bokeh in Python</td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-25</td>
       <td>Workflow: Beamer</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -484,12 +511,14 @@ Name: date_toprint, dtype: object
       <td>Workflow: Beamer and Tikz graphics</td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Tuesday 06-01</td>
       <td>Final presentations</td>
       <td></td>
       <td>Slides for final presentation (due Monday 05.31 at 9 am)</td>
+      <td></td>
     </tr>
   </tbody>
 </table></div></div>
