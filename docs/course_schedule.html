@@ -293,12 +293,12 @@ Name: date_toprint, dtype: object
 <span class="c1">### list of concepts</span>
 <span class="n">concepts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Course intro. and checking software setup&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python basic data wrangling: data structures (vectors; lists; dataframes; matrices), control flow, and loops&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python basic data wrangling: basic regular expressions and text mining&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python basic data wrangling: combining data (row binds, column binds, joins); aggregation&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Review of visualization: ggplot; plotnine&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Workflow basics (continued)&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Python pandas review: aggregation, joins, lambda and user-defined functions&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Problem set one work session&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;TBD&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Problem set one review&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python: writing your own functions and simulation&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Python: simulation&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Python: text data using nltk and gensim&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Python: spatial data using geopandas&quot;</span><span class="p">,</span>
              <span class="s2">&quot;SQL: reading data from a database and basic SQL (postgres) syntax&quot;</span><span class="p">,</span>
@@ -306,7 +306,7 @@ Name: date_toprint, dtype: object
              <span class="s2">&quot;Python: reading data from APIs and basic web scraping&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Python: interacting with cloud computing resources (Amazon S3; Dartmouth&#39;s Andes or Polaris servers)&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Problem set two review&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Interactive visualization: bokeh in Python&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Interactive visualization&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Workflow: Beamer&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Workflow: Beamer and Tikz graphics&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Final presentations&quot;</span><span class="p">]</span>
@@ -316,30 +316,40 @@ Name: date_toprint, dtype: object
                                      <span class="s1">&#39;Concepts&#39;</span><span class="p">:</span> <span class="n">concepts</span><span class="p">})</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">course_sched_concepts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="c1">## add datacamp modules conditionally</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## add datacamp modules conditionally</span>
 <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;Concepts&quot;</span>
-<span class="n">topics</span>  <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Python basic data wrangling: data structures (vectors; lists; dataframes; matrices), control flow, and loops&quot;</span><span class="p">,</span> 
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Python basic data wrangling: basic regular expressions and text mining&quot;</span><span class="p">,</span>
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span>  <span class="s2">&quot;Python basic data wrangling: combining data (row binds, column binds, joins); aggregation&quot;</span><span class="p">,</span>
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Review of visualization: ggplot; plotnine&quot;</span><span class="p">,</span>
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Python: writing your own functions&quot;</span><span class="p">,</span>
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Python: text data using nltk and gensim&quot;</span><span class="p">,</span>
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span>  <span class="s2">&quot;SQL: reading data from a database and basic SQL (postgres) syntax&quot;</span><span class="p">,</span>
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SQL: more advanced SQL syntax (subqueries; window functions)&quot;</span><span class="p">,</span>
-               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Python: reading data from APIs and basic web scraping&quot;</span><span class="p">]</span>
-<span class="n">datacamp_modules</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Python basics; python lists; Pandas: extracting and transforming data; Intermediate python for data science (loops)&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;First three modules of regular expressions in Python&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;Merging DataFrames with Pandas&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;Introduction to Data Visualization with ggplot2&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;Python data science toolbox (Part one): user-written functions, default args, lambda functions and error handling&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;Natural language processing fundamentals in Python&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;Introduction to databases in Python&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;Intermediate SQL&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;Importing JSON data and working with APIs; Importing data from the Internet&quot;</span><span class="p">]</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;DataCamp module(s) (if any)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">topics</span><span class="p">,</span> 
-                                     <span class="n">datacamp_modules</span><span class="p">,</span> 
+<span class="c1">### older code on more exhaustive modules</span>
+<span class="c1"># topics  = [df[col] == &quot;Python basic data wrangling: data structures (vectors; lists; dataframes; matrices), control flow, and loops&quot;, </span>
+<span class="c1">#                df[col] == &quot;Python basic data wrangling: basic regular expressions and text mining&quot;,</span>
+<span class="c1">#                df[col] ==  &quot;Python basic data wrangling: combining data (row binds, column binds, joins); aggregation&quot;,</span>
+<span class="c1">#                df[col] == &quot;Review of visualization: ggplot; plotnine&quot;,</span>
+<span class="c1">#                df[col] == &quot;Python: writing your own functions&quot;,</span>
+<span class="c1">#                df[col] == &quot;Python: text data using nltk and gensim&quot;,</span>
+<span class="c1">#                df[col] ==  &quot;SQL: reading data from a database and basic SQL (postgres) syntax&quot;,</span>
+<span class="c1">#                df[col] == &quot;SQL: more advanced SQL syntax (subqueries; window functions)&quot;,</span>
+<span class="c1">#                df[col] == &quot;Python: reading data from APIs and basic web scraping&quot;]</span>
+<span class="c1"># datacamp_modules = [&quot;Python basics; python lists; Pandas: extracting and transforming data; Intermediate python for data science (loops)&quot;,</span>
+<span class="c1">#                    &quot;First three modules of regular expressions in Python&quot;,</span>
+<span class="c1">#                    &quot;Merging DataFrames with Pandas&quot;,</span>
+<span class="c1">#                    &quot;Introduction to Data Visualization with ggplot2&quot;,</span>
+<span class="c1">#                    &quot;Python data science toolbox (Part one): user-written functions, default args, lambda functions and error handling&quot;,</span>
+<span class="c1">#                    &quot;Natural language processing fundamentals in Python&quot;,</span>
+<span class="c1">#                    &quot;Introduction to databases in Python&quot;,</span>
+<span class="c1">#                    &quot;Intermediate SQL&quot;,</span>
+<span class="c1">#                    &quot;Importing JSON data and working with APIs; Importing data from the Internet&quot;]</span>
+
+<span class="n">topics_trunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span>  <span class="s2">&quot;Workflow basics (continued)&quot;</span><span class="p">]</span>
+<span class="n">datacamp_modules_trunc</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Data manipulation with Pandas&quot;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;DataCamp module(s) (if any)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">topics_trunc</span><span class="p">,</span> 
+                                     <span class="n">datacamp_modules_trunc</span><span class="p">,</span> 
                                      <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 
@@ -358,12 +368,22 @@ Name: date_toprint, dtype: object
                      <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="c1">## add slides or tutorial link</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Course intro. and checking software setup&quot;</span><span class="p">],</span>
-                                            <span class="p">[</span><span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf&quot;</span><span class="p">],</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Course intro. and checking software setup&quot;</span><span class="p">,</span>
+                                             <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;</span><span class="p">],</span>
+                                            <span class="p">[</span><span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf&quot;</span><span class="p">,</span>
+                                            <span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class2.pdf&quot;</span><span class="p">],</span>
                                             <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
                         <span class="s1">&#39;&lt;a target=&quot;_blank&quot; href=&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&lt;div&gt;&#39;</span> <span class="o">+</span> <span class="s2">&quot;Link&quot;</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span><span class="p">,</span>
+                        <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;</span><span class="p">],</span>
+                                            <span class="p">[</span><span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/activities/00_latex_output_examples.ipynb&quot;</span><span class="p">],</span>
+                                            <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;&lt;a target=&quot;_blank&quot; href=&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&lt;div&gt;&#39;</span> <span class="o">+</span> <span class="s2">&quot;Link&quot;</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span><span class="p">,</span>
                         <span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -384,6 +404,7 @@ Name: date_toprint, dtype: object
       <th>DataCamp module(s) (if any)</th>
       <th>Due (11:59 PM EST unless otherwise specified)</th>
       <th>Link to slides or tutorial</th>
+      <th>Link to activity (blank)</th>
     </tr>
   </thead>
   <tbody>
@@ -393,40 +414,46 @@ Name: date_toprint, dtype: object
       <td></td>
       <td></td>
       <td><a target="_blank" href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf><div>Link</div></a></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-01</td>
       <td>Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans</td>
       <td></td>
       <td></td>
-      <td></td>
+      <td><a target="_blank" href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class2.pdf><div>Link</div></a></td>
+      <td><a target="_blank" href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/activities/00_latex_output_examples.ipynb><div>Link</div></a></td>
     </tr>
     <tr>
       <td>Tuesday 04-06</td>
-      <td>Python basic data wrangling: data structures (vectors; lists; dataframes; matrices), control flow, and loops</td>
-      <td>Python basics; python lists; Pandas: extracting and transforming data; Intermediate python for data science (loops)</td>
+      <td>Workflow basics (continued)</td>
+      <td>Data manipulation with Pandas</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 04-08</td>
-      <td>Python basic data wrangling: basic regular expressions and text mining</td>
-      <td>First three modules of regular expressions in Python</td>
+      <td>Python pandas review: aggregation, joins, lambda and user-defined functions</td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 04-13</td>
-      <td>Python basic data wrangling: combining data (row binds, column binds, joins); aggregation</td>
-      <td>Merging DataFrames with Pandas</td>
+      <td>Problem set one work session</td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 04-15</td>
-      <td>Review of visualization: ggplot; plotnine</td>
-      <td>Introduction to Data Visualization with ggplot2</td>
+      <td>TBD</td>
+      <td></td>
       <td>Problem set one</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -435,18 +462,21 @@ Name: date_toprint, dtype: object
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-22</td>
-      <td>Python: writing your own functions and simulation</td>
+      <td>Python: simulation</td>
       <td></td>
       <td>1-page project proposal</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 04-27</td>
       <td>Python: text data using nltk and gensim</td>
-      <td>Natural language processing fundamentals in Python</td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -456,25 +486,29 @@ Name: date_toprint, dtype: object
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-04</td>
       <td>SQL: reading data from a database and basic SQL (postgres) syntax</td>
-      <td>Introduction to databases in Python</td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 05-06</td>
       <td>SQL: more advanced SQL syntax (subqueries; window functions)</td>
-      <td>Intermediate SQL</td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-11</td>
       <td>Python: reading data from APIs and basic web scraping</td>
-      <td>Importing JSON data and working with APIs; Importing data from the Internet</td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -484,6 +518,7 @@ Name: date_toprint, dtype: object
       <td></td>
       <td>Problem set two</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-18</td>
@@ -491,10 +526,12 @@ Name: date_toprint, dtype: object
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 05-20</td>
-      <td>Interactive visualization: bokeh in Python</td>
+      <td>Interactive visualization</td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -505,10 +542,12 @@ Name: date_toprint, dtype: object
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Thursday 05-27</td>
       <td>Workflow: Beamer and Tikz graphics</td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -518,6 +557,7 @@ Name: date_toprint, dtype: object
       <td>Final presentations</td>
       <td></td>
       <td>Slides for final presentation (due Monday 05.31 at 9 am)</td>
+      <td></td>
       <td></td>
     </tr>
   </tbody>
