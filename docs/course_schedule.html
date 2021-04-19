@@ -295,27 +295,37 @@ Name: date_toprint, dtype: object
              <span class="s2">&quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Workflow basics (continued)&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Python pandas review: aggregation, joins, lambda and user-defined functions&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Problem set one work session&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;TBD&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Problem set one review&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python: simulation&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python: text data using nltk and gensim&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Python pandas review: aggregation, joins, lambda and user-defined functions&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Python pandas review: aggregation, joins, lambda and user-defined functions&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Problem set one work session&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Merging: exact merges and basic regex&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Merging: probabilistic merge and more regex&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Merging (continued) and PSET 1 review&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SQL via Python&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Text as data part one&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Text as data part two&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Python: spatial data using geopandas&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;SQL: reading data from a database and basic SQL (postgres) syntax&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;SQL: more advanced SQL syntax (subqueries; window functions)&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Python: reading data from APIs and basic web scraping&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python: interacting with cloud computing resources (Amazon S3; Dartmouth&#39;s Andes or Polaris servers)&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Problem set two review&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Interactive visualization&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Workflow: Beamer&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;High-performance computing&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;TBD&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Workflow: Beamer and Tikz graphics&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Final presentations&quot;</span><span class="p">]</span>
 
+<span class="nb">len</span><span class="p">(</span><span class="n">course_sched</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">concepts</span><span class="p">)</span>
 <span class="c1">## combine</span>
 <span class="n">course_sched_concepts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Week&#39;</span><span class="p">:</span> <span class="n">course_sched</span><span class="p">,</span>
                                      <span class="s1">&#39;Concepts&#39;</span><span class="p">:</span> <span class="n">concepts</span><span class="p">})</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">course_sched_concepts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
 </pre></div>
 </div>
 </div>
@@ -345,8 +355,10 @@ Name: date_toprint, dtype: object
 <span class="c1">#                    &quot;Intermediate SQL&quot;,</span>
 <span class="c1">#                    &quot;Importing JSON data and working with APIs; Importing data from the Internet&quot;]</span>
 
-<span class="n">topics_trunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span>  <span class="s2">&quot;Workflow basics (continued)&quot;</span><span class="p">]</span>
-<span class="n">datacamp_modules_trunc</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Data manipulation with Pandas&quot;</span><span class="p">]</span>
+<span class="n">topics_trunc</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span>  <span class="s2">&quot;Workflow basics (continued)&quot;</span><span class="p">,</span>
+               <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Merging (continued) and PSET 1 review&quot;</span><span class="p">]</span>
+<span class="n">datacamp_modules_trunc</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Data manipulation with Pandas&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;Regular expressions for pattern matching&quot;</span><span class="p">]</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;DataCamp module(s) (if any)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">topics_trunc</span><span class="p">,</span> 
                                      <span class="n">datacamp_modules_trunc</span><span class="p">,</span> 
@@ -354,13 +366,17 @@ Name: date_toprint, dtype: object
 
 
 <span class="n">date_col</span> <span class="o">=</span> <span class="s2">&quot;Week&quot;</span>
-<span class="n">due_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Thursday 04-15&quot;</span><span class="p">,</span>
-            <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Thursday 04-22&quot;</span><span class="p">,</span>
+<span class="n">due_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 04-20&quot;</span><span class="p">,</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 04-27&quot;</span><span class="p">,</span>
+             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 05-04&quot;</span><span class="p">,</span>
             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Thursday 05-13&quot;</span><span class="p">,</span>
+             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Thursday 05-20&quot;</span><span class="p">,</span>
             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 06-01&quot;</span><span class="p">]</span>
 <span class="n">assig</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Problem set one&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;1-page project proposal&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Final project step 1&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Final project step 2&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Problem set two&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Final project step 3&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Slides for final presentation (due Monday 05.31 at 9 am)&quot;</span><span class="p">]</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Due (11:59 PM EST unless otherwise specified)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">due_dates</span><span class="p">,</span>
@@ -442,7 +458,7 @@ Name: date_toprint, dtype: object
     </tr>
     <tr>
       <td>Tuesday 04-13</td>
-      <td>Problem set one work session</td>
+      <td>Python pandas review: aggregation, joins, lambda and user-defined functions</td>
       <td></td>
       <td></td>
       <td></td>
@@ -450,55 +466,55 @@ Name: date_toprint, dtype: object
     </tr>
     <tr>
       <td>Thursday 04-15</td>
-      <td>TBD</td>
+      <td>Python pandas review: aggregation, joins, lambda and user-defined functions</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tuesday 04-20</td>
+      <td>Problem set one work session</td>
       <td></td>
       <td>Problem set one</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td>Tuesday 04-20</td>
-      <td>Problem set one review</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
       <td>Thursday 04-22</td>
-      <td>Python: simulation</td>
+      <td>Merging: exact merges and basic regex</td>
       <td></td>
-      <td>1-page project proposal</td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 04-27</td>
-      <td>Python: text data using nltk and gensim</td>
+      <td>Merging: probabilistic merge and more regex</td>
       <td></td>
-      <td></td>
+      <td>Final project step 1</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 04-29</td>
-      <td>Python: spatial data using geopandas</td>
-      <td></td>
+      <td>Merging (continued) and PSET 1 review</td>
+      <td>Regular expressions for pattern matching</td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-04</td>
-      <td>SQL: reading data from a database and basic SQL (postgres) syntax</td>
+      <td>SQL via Python</td>
       <td></td>
-      <td></td>
+      <td>Final project step 2</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 05-06</td>
-      <td>SQL: more advanced SQL syntax (subqueries; window functions)</td>
+      <td>Text as data part one</td>
       <td></td>
       <td></td>
       <td></td>
@@ -506,7 +522,7 @@ Name: date_toprint, dtype: object
     </tr>
     <tr>
       <td>Tuesday 05-11</td>
-      <td>Python: reading data from APIs and basic web scraping</td>
+      <td>Text as data part two</td>
       <td></td>
       <td></td>
       <td></td>
@@ -514,7 +530,7 @@ Name: date_toprint, dtype: object
     </tr>
     <tr>
       <td>Thursday 05-13</td>
-      <td>Python: interacting with cloud computing resources (Amazon S3; Dartmouth's Andes or Polaris servers)</td>
+      <td>Python: spatial data using geopandas</td>
       <td></td>
       <td>Problem set two</td>
       <td></td>
@@ -522,7 +538,7 @@ Name: date_toprint, dtype: object
     </tr>
     <tr>
       <td>Tuesday 05-18</td>
-      <td>Problem set two review</td>
+      <td>Python: reading data from APIs and basic web scraping</td>
       <td></td>
       <td></td>
       <td></td>
@@ -530,15 +546,15 @@ Name: date_toprint, dtype: object
     </tr>
     <tr>
       <td>Thursday 05-20</td>
-      <td>Interactive visualization</td>
+      <td>High-performance computing</td>
       <td></td>
-      <td></td>
+      <td>Final project step 3</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-25</td>
-      <td>Workflow: Beamer</td>
+      <td>TBD</td>
       <td></td>
       <td></td>
       <td></td>
