@@ -298,17 +298,17 @@ Name: date_toprint, dtype: object
             <span class="s2">&quot;Python pandas review: aggregation, joins, lambda and user-defined functions&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;Problem set one work session&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Intro to merging&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Merging: probabilistic merge and more regex&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Merging (continued) and PSET 1 review&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;SQL via Python&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Text as data part one&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Text as data part two&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;TBD&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python: spatial data using geopandas&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Python: reading data from APIs and basic web scraping&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;High-performance computing&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;TBD&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;Workflow: Beamer and Tikz graphics&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Regex&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Probabilistic matching: part one&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Probabilistic matching: part two&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Text as data: part one&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Text as data: part two&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Problem set two work session and intro to APIs&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;APIs continued&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Web scraping: part one&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Web scraping/high performance computing&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SQL&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;Final project work session&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Final presentations&quot;</span><span class="p">]</span>
 
 <span class="nb">len</span><span class="p">(</span><span class="n">course_sched</span><span class="p">)</span>
@@ -318,6 +318,8 @@ Name: date_toprint, dtype: object
                                      <span class="s1">&#39;Concepts&#39;</span><span class="p">:</span> <span class="n">concepts</span><span class="p">})</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">course_sched_concepts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -326,6 +328,28 @@ Name: date_toprint, dtype: object
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Week                                           Concepts
+0    Tuesday 03-30          Course intro. and checking software setup
+1   Thursday 04-01  Workflow basics: command line, Github workflow...
+2    Tuesday 04-06                        Workflow basics (continued)
+3   Thursday 04-08  Python pandas review: aggregation, joins, lamb...
+4    Tuesday 04-13  Python pandas review: aggregation, joins, lamb...
+5   Thursday 04-15                       Problem set one work session
+6    Tuesday 04-20                                   Intro to merging
+7   Thursday 04-22                                              Regex
+8    Tuesday 04-27                   Probabilistic matching: part one
+9   Thursday 04-29                   Probabilistic matching: part two
+10   Tuesday 05-04                             Text as data: part one
+11  Thursday 05-06                             Text as data: part two
+12   Tuesday 05-11     Problem set two work session and intro to APIs
+13  Thursday 05-13                                     APIs continued
+14   Tuesday 05-18                             Web scraping: part one
+15  Thursday 05-20            Web scraping/high performance computing
+16   Tuesday 05-25                                                SQL
+17  Thursday 05-27                         Final project work session
+18   Tuesday 06-01                                Final presentations
 </pre></div>
 </div>
 </div>
@@ -368,39 +392,40 @@ Name: date_toprint, dtype: object
 <span class="n">date_col</span> <span class="o">=</span> <span class="s2">&quot;Week&quot;</span>
 <span class="n">due_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 04-20&quot;</span><span class="p">,</span>
             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 04-27&quot;</span><span class="p">,</span>
-             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 05-04&quot;</span><span class="p">,</span>
             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Thursday 05-13&quot;</span><span class="p">,</span>
-             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Thursday 05-20&quot;</span><span class="p">,</span>
+             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 05-18&quot;</span><span class="p">,</span>
+             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Friday 05-21&quot;</span><span class="p">,</span>
             <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tuesday 06-01&quot;</span><span class="p">]</span>
 <span class="n">assig</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Problem set one&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Final project step 1&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;Final project step 2&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Problem set two&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;Final project step 3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Problem set two: part one&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Problem set two: part two&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Final project step 2&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Slides for final presentation (due Monday 05.31 at 9 am)&quot;</span><span class="p">]</span>
+
 
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Due (11:59 PM EST unless otherwise specified)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">due_dates</span><span class="p">,</span>
                      <span class="n">assig</span><span class="p">,</span>
                      <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="c1">## add slides or tutorial link</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Course intro. and checking software setup&quot;</span><span class="p">,</span>
-                                             <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;</span><span class="p">],</span>
-                                            <span class="p">[</span><span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf&quot;</span><span class="p">,</span>
-                                            <span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class2.pdf&quot;</span><span class="p">],</span>
-                                            <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># df[&#39;Link to slides or tutorial&#39;] = np.select([df[&quot;Concepts&quot;] == &quot;Course intro. and checking software setup&quot;,</span>
+<span class="c1">#                                              df[&quot;Concepts&quot;] == &quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;],</span>
+<span class="c1">#                                             [&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf&quot;,</span>
+<span class="c1">#                                             &quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class2.pdf&quot;],</span>
+<span class="c1">#                                             default = &quot;&quot;)</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                        <span class="s1">&#39;&lt;a target=&quot;_blank&quot; href=&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to slides or tutorial&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&lt;div&gt;&#39;</span> <span class="o">+</span> <span class="s2">&quot;Link&quot;</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span><span class="p">,</span>
-                        <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># df[&#39;Link to slides or tutorial&#39;] = np.where(df[&#39;Link to slides or tutorial&#39;] != &quot;&quot;,</span>
+<span class="c1">#                         &#39;&lt;a target=&quot;_blank&quot; href=&#39; + df[&#39;Link to slides or tutorial&#39;] + &#39;&gt;&lt;div&gt;&#39; + &quot;Link&quot; + &#39;&lt;/div&gt;&lt;/a&gt;&#39;,</span>
+<span class="c1">#                         &quot;&quot;)</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Concepts&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;</span><span class="p">],</span>
-                                            <span class="p">[</span><span class="s2">&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/activities/00_latex_output_examples.ipynb&quot;</span><span class="p">],</span>
-                                            <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># df[&#39;Link to activity (blank)&#39;] = np.select([df[&quot;Concepts&quot;] == &quot;Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans&quot;],</span>
+<span class="c1">#                                             [&quot;https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/activities/00_latex_output_examples.ipynb&quot;],</span>
+<span class="c1">#                                             default = &quot;&quot;)</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                        <span class="s1">&#39;&lt;a target=&quot;_blank&quot; href=&#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Link to activity (blank)&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&lt;div&gt;&#39;</span> <span class="o">+</span> <span class="s2">&quot;Link&quot;</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&lt;/a&gt;&#39;</span><span class="p">,</span>
-                        <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># df[&#39;Link to activity (blank)&#39;] = np.where(df[&#39;Link to activity (blank)&#39;] != &quot;&quot;,</span>
+<span class="c1">#                         &#39;&lt;a target=&quot;_blank&quot; href=&#39; + df[&#39;Link to activity (blank)&#39;] + &#39;&gt;&lt;div&gt;&#39; + &quot;Link&quot; + &#39;&lt;/div&gt;&lt;/a&gt;&#39;,</span>
+<span class="c1">#                         &quot;&quot;)</span>
 </pre></div>
 </div>
 </div>
@@ -419,8 +444,6 @@ Name: date_toprint, dtype: object
       <th>Concepts</th>
       <th>DataCamp module(s) (if any)</th>
       <th>Due (11:59 PM EST unless otherwise specified)</th>
-      <th>Link to slides or tutorial</th>
-      <th>Link to activity (blank)</th>
     </tr>
   </thead>
   <tbody>
@@ -429,30 +452,22 @@ Name: date_toprint, dtype: object
       <td>Course intro. and checking software setup</td>
       <td></td>
       <td></td>
-      <td><a target="_blank" href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class1.pdf><div>Link</div></a></td>
-      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-01</td>
       <td>Workflow basics: command line, Github workflow, basic LaTeX syntax, pre-analysis plans</td>
       <td></td>
       <td></td>
-      <td><a target="_blank" href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/slides/qss20_s21_class2.pdf><div>Link</div></a></td>
-      <td><a target="_blank" href=https://github.com/rebeccajohnson88/qss20_slides_activities/blob/main/activities/00_latex_output_examples.ipynb><div>Link</div></a></td>
     </tr>
     <tr>
       <td>Tuesday 04-06</td>
       <td>Workflow basics (continued)</td>
       <td>Data manipulation with Pandas</td>
       <td></td>
-      <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-08</td>
       <td>Python pandas review: aggregation, joins, lambda and user-defined functions</td>
-      <td></td>
-      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -461,14 +476,10 @@ Name: date_toprint, dtype: object
       <td>Python pandas review: aggregation, joins, lambda and user-defined functions</td>
       <td></td>
       <td></td>
-      <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-15</td>
       <td>Problem set one work session</td>
-      <td></td>
-      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -477,94 +488,70 @@ Name: date_toprint, dtype: object
       <td>Intro to merging</td>
       <td></td>
       <td>Problem set one</td>
-      <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-22</td>
-      <td>Merging: probabilistic merge and more regex</td>
-      <td></td>
-      <td></td>
+      <td>Regex</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 04-27</td>
-      <td>Merging (continued) and PSET 1 review</td>
-      <td>Regular expressions for pattern matching</td>
+      <td>Probabilistic matching: part one</td>
+      <td></td>
       <td>Final project step 1</td>
-      <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Thursday 04-29</td>
-      <td>SQL via Python</td>
-      <td></td>
-      <td></td>
+      <td>Probabilistic matching: part two</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-04</td>
-      <td>Text as data part one</td>
-      <td></td>
-      <td>Final project step 2</td>
+      <td>Text as data: part one</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 05-06</td>
-      <td>Text as data part two</td>
-      <td></td>
-      <td></td>
+      <td>Text as data: part two</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-11</td>
-      <td>TBD</td>
-      <td></td>
-      <td></td>
+      <td>Problem set two work session and intro to APIs</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 05-13</td>
-      <td>Python: spatial data using geopandas</td>
+      <td>APIs continued</td>
       <td></td>
-      <td>Problem set two</td>
-      <td></td>
-      <td></td>
+      <td>Problem set two: part one</td>
     </tr>
     <tr>
       <td>Tuesday 05-18</td>
-      <td>Python: reading data from APIs and basic web scraping</td>
+      <td>Web scraping: part one</td>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>Problem set two: part two</td>
     </tr>
     <tr>
       <td>Thursday 05-20</td>
-      <td>High-performance computing</td>
-      <td></td>
-      <td>Final project step 3</td>
+      <td>Web scraping/high performance computing</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Tuesday 05-25</td>
-      <td>TBD</td>
-      <td></td>
-      <td></td>
+      <td>SQL</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Thursday 05-27</td>
-      <td>Workflow: Beamer and Tikz graphics</td>
-      <td></td>
-      <td></td>
+      <td>Final project work session</td>
       <td></td>
       <td></td>
     </tr>
@@ -573,8 +560,6 @@ Name: date_toprint, dtype: object
       <td>Final presentations</td>
       <td></td>
       <td>Slides for final presentation (due Monday 05.31 at 9 am)</td>
-      <td></td>
-      <td></td>
     </tr>
   </tbody>
 </table></div></div>
